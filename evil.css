@@ -24,3 +24,14 @@
     margin: 25px;
     justify-items: center;
 }
+.scientist-name {
+    text-align-last: center;
+    font-size: xx-large;
+    color: red;
+}
+.detailedinfo {
+    background-color: aliceblue;
+    height: 20rem;
+    margin: 25px;
+    border: 2px solid black;
+}
