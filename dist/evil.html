@@ -6,22 +6,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="evil.css" />
         <title>Document</title>
-        <script src="evil.js"></script>
     </head>
     <body>
         <div class="container">
             <div class="column">
                 !-Formuläret
-                <form class="form">
+                <form id="form">
                     <label for="Name">Name</label>
-                    <input type="text" id="" name="name" />
+                    <input type="text" id="name" name="name" class="inputbox" />
                     <label for="Age">Age</label>
-                    <input type="text" id="" name="age" />
+                    <input type="number" id="age" name="age" class="inputbox" />
                     <label for="henchmen">Amount of henchmen</label>
-                    <input type="text" id="" name="henchmen" />
+                    <input
+                        type="number"
+                        id="henchmen"
+                        name="henchmen"
+                        class="inputbox"
+                    />
                     <label for="info">Backstory</label>
-                    <input type="text" id="" name="info" />
-                    <button>Add scientist</button>
+                    <input type="text" id="info" name="info" class="infobox" />
+                    <button class="addbutton">Add scientist</button>
                 </form>
             </div>
             <div class="column">
@@ -31,21 +35,17 @@
                         Evil Dude <button>Go to</button>
                     </p>
                 </div>
-                <div class="scientist"></div>
-                <div class="scientist"></div>
-                <div class="scientist"></div>
-                <div class="scientist"></div>
-                <div class="scientist"></div>
             </div>
             <div class="column">
                 !--Visa detaljerad info här
                 <div class="detailedinfo">
-                    <img src="evilscientist.png" alt="" />
+                    <img src="evilscientist.png" class="image" />
                 </div>
                 <ul>
                     lol
                 </ul>
             </div>
         </div>
+        <script src="evil.js"></script>
     </body>
 </html>
