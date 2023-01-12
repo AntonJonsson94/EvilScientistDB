@@ -4,18 +4,22 @@
     height: 50rem;
     justify-content: space-around;
     column-gap: 15px;
-    background-color: gray;
+    background-image: linear-gradient(rgb(122, 108, 224), rgb(221, 126, 224));
 }
 
-.column,
-#newcard {
+.column {
     background-color: rgb(240, 234, 245);
     border: 1px solid black;
     width: 30rem;
     border-radius: 0.5rem;
 }
-.card {
-    width: 10rem;
+#column {
+    background-image: linear-gradient(rgb(210, 224, 108), rgb(221, 126, 224));
+    border-radius: 11px;
+    width: initial;
+    height: 7vw;
+    margin: 10px;
+    font-size: 20px;
 }
 
 #form {
@@ -24,6 +28,7 @@
     align-items: center;
     margin-top: 30%;
     font-size: x-large;
+    margin: 10px;
 }
 
 .scientist {
