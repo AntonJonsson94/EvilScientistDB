@@ -7,12 +7,17 @@
     background-color: gray;
 }
 
-.column {
-    background-color: rgb(178, 114, 238);
+.column,
+#newcard {
+    background-color: rgb(240, 234, 245);
     border: 1px solid black;
     width: 30rem;
     border-radius: 0.5rem;
 }
+.card {
+    width: 10rem;
+}
+
 #form {
     display: flex;
     flex-direction: column;
@@ -56,6 +61,7 @@
 .addbutton:hover {
     background-color: rgb(171, 171, 171);
 }
+
 .detailedinfo {
     height: 20rem;
     margin: 25px;
