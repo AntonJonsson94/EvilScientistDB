@@ -6,9 +6,24 @@ type evilScientist = {
 };
 
 const Scientists: evilScientist[] = [
-    { name: "Hjalmar", age: 50, henchmen: 5000, info: "Stuff" },
-    { name: "Balder", age: 80, henchmen: 50000, info: "Stuffs" },
-    { name: "Torbjörn", age: 45, henchmen: 6540, info: "Likes beef" },
+    {
+        name: "Hjalmar",
+        age: 50,
+        henchmen: 5000,
+        info: "An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance.",
+    },
+    {
+        name: "Balder",
+        age: 80,
+        henchmen: 50000,
+        info: "An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance.",
+    },
+    {
+        name: "Torbjörn",
+        age: 45,
+        henchmen: 6540,
+        info: "An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance.",
+    },
     {
         name: "Alfons",
         age: 65,
@@ -71,9 +86,6 @@ function printSelectedScientist(index: number) {
     selectedScientistName.setAttribute("id", "name-tag");
     selectedScientistName.innerHTML = selectedScientist.name;
 
-    const selectedScientistCardList = document.createElement(
-        "ul"
-    ) as HTMLUListElement;
     const selectedScientistAge = document.createElement(
         "p"
     ) as HTMLParagraphElement;

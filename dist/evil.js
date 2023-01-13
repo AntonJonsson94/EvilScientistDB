@@ -4,19 +4,19 @@ const Scientists = [
         name: "Hjalmar",
         age: 50,
         henchmen: 5000,
-        info: "Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like",
+        info: "An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance.",
     },
     {
         name: "Balder",
         age: 80,
         henchmen: 50000,
-        info: "Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like",
+        info: "An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance.",
     },
     {
         name: "Torbjörn",
         age: 45,
         henchmen: 6540,
-        info: "Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like",
+        info: "An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance. An act of consideration shown by a relative inspired your character to try to act likewise. Your character decided to learn about gardening, but didn't really like it. Your character ended up with quite a bit of money due to a large inheritance.",
     },
     {
         name: "Alfons",
@@ -87,14 +87,13 @@ const newScientistHenchmen = document.querySelector("#henchmen");
 const newScientistInfo = document.querySelector("#info");
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
-    if (
-        newScientistName.value === "" ||
+    if (newScientistName.value === "" ||
         newScientistAge.value === "" ||
         newScientistHenchmen.value === "" ||
-        newScientistInfo.value === ""
-    ) {
+        newScientistInfo.value === "") {
         alert("Var god och fyll i all information!");
-    } else {
+    }
+    else {
         const newScientist = {
             name: newScientistName.value,
             age: parseInt(newScientistAge.value),
