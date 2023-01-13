@@ -68,14 +68,16 @@ function printSelectedScientist(index: number) {
     const selectedScientistAge = document.createElement(
         "div"
     ) as HTMLDivElement;
-    selectedScientistAge.innerHTML = "Age" + selectedScientist.age.toString();
+    selectedScientistAge.innerHTML =
+        "Age" + " " + selectedScientist.age.toString();
     const selectedScientistHenchmen = document.createElement(
         "li"
     ) as HTMLLIElement;
     selectedScientistHenchmen.innerHTML =
-        "Amount of henchmen" + selectedScientist.henchmen.toString();
+        "Amount of henchmen" + " " + selectedScientist.henchmen.toString();
     const selectedScientistInfo = document.createElement("li") as HTMLLIElement;
-    selectedScientistInfo.innerHTML = "Backstory" + selectedScientist.info;
+    selectedScientistInfo.innerHTML =
+        "Backstory" + " " + selectedScientist.info;
 
     detailedInfoContainer.appendChild(selectedScientistCard);
     selectedScientistCard.appendChild(selectedScientistName);
