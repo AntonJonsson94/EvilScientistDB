@@ -47,8 +47,6 @@ function printSelectedScientist(index: number) {
     // console.log("Clicked on index:" + index);
     //Spara selected scientist i en variabel
     const selectedScientist = Scientists[index];
-    const imageOfScientist = document.createElement("img") as HTMLImageElement;
-    imageOfScientist.src = "images/evilscientist.png";
     let detailedInfoContainer = document.querySelector(
         "#detailed-info"
     ) as HTMLDivElement;
@@ -58,6 +56,15 @@ function printSelectedScientist(index: number) {
     ) as HTMLDivElement;
 
     selectedScientistCard.setAttribute("id", "selected-scientist-card");
+    const nameCard = document.createElement("div") as HTMLDivElement;
+    nameCard.setAttribute("class", "name");
+    const ageCard = document.createElement("div") as HTMLDivElement;
+    ageCard.setAttribute("class", "age");
+    const henchmenCard = document.createElement("div") as HTMLDivElement;
+    henchmenCard.setAttribute("class", "henchmen");
+    const infoCard = document.createElement("div") as HTMLDivElement;
+    infoCard.setAttribute("class", "infocard");
+
     const selectedScientistName = document.createElement(
         "p"
     ) as HTMLParagraphElement;
@@ -71,25 +78,27 @@ function printSelectedScientist(index: number) {
         "p"
     ) as HTMLParagraphElement;
     selectedScientistAge.innerHTML =
-        "Age" + " " + selectedScientist.age.toString();
+        "Age:" + " " + selectedScientist.age.toString();
     const selectedScientistHenchmen = document.createElement(
         "p"
     ) as HTMLParagraphElement;
     selectedScientistHenchmen.innerHTML =
-        "Amount of henchmen" + " " + selectedScientist.henchmen.toString();
+        "Amount of henchmen:" + " " + selectedScientist.henchmen.toString();
     const selectedScientistInfo = document.createElement(
         "p"
     ) as HTMLParagraphElement;
     selectedScientistInfo.innerHTML =
-        "Backstory" + " " + selectedScientist.info;
+        "Backstory:" + " " + selectedScientist.info;
 
-    detailedInfoContainer.appendChild(imageOfScientist);
     detailedInfoContainer.appendChild(selectedScientistCard);
-    selectedScientistCard.appendChild(selectedScientistName);
-    selectedScientistName.appendChild(selectedScientistCardList);
-    selectedScientistCardList.appendChild(selectedScientistAge);
-    selectedScientistCardList.appendChild(selectedScientistHenchmen);
-    selectedScientistCardList.appendChild(selectedScientistInfo);
+    selectedScientistCard.appendChild(nameCard);
+    nameCard.appendChild(selectedScientistName);
+    selectedScientistCard.appendChild(ageCard);
+    ageCard.appendChild(selectedScientistAge);
+    selectedScientistCard.appendChild(henchmenCard);
+    henchmenCard.appendChild(selectedScientistHenchmen);
+    selectedScientistCard.appendChild(infoCard);
+    infoCard.appendChild(selectedScientistInfo);
 }
 console.log(Scientists);
 

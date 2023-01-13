@@ -30,32 +30,40 @@ function printScientists() {
 printScientists();
 function printSelectedScientist(index) {
     const selectedScientist = Scientists[index];
-    const imageOfScientist = document.createElement("img");
-    imageOfScientist.src = "images/evilscientist.png";
     let detailedInfoContainer = document.querySelector("#detailed-info");
     detailedInfoContainer.innerHTML = "";
     const selectedScientistCard = document.createElement("div");
     selectedScientistCard.setAttribute("id", "selected-scientist-card");
+    const nameCard = document.createElement("div");
+    nameCard.setAttribute("class", "name");
+    const ageCard = document.createElement("div");
+    ageCard.setAttribute("class", "age");
+    const henchmenCard = document.createElement("div");
+    henchmenCard.setAttribute("class", "henchmen");
+    const infoCard = document.createElement("div");
+    infoCard.setAttribute("class", "infocard");
     const selectedScientistName = document.createElement("p");
     selectedScientistName.setAttribute("id", "name-tag");
     selectedScientistName.innerHTML = selectedScientist.name;
     const selectedScientistCardList = document.createElement("ul");
     const selectedScientistAge = document.createElement("p");
     selectedScientistAge.innerHTML =
-        "Age" + " " + selectedScientist.age.toString();
+        "Age:" + " " + selectedScientist.age.toString();
     const selectedScientistHenchmen = document.createElement("p");
     selectedScientistHenchmen.innerHTML =
-        "Amount of henchmen" + " " + selectedScientist.henchmen.toString();
+        "Amount of henchmen:" + " " + selectedScientist.henchmen.toString();
     const selectedScientistInfo = document.createElement("p");
     selectedScientistInfo.innerHTML =
-        "Backstory" + " " + selectedScientist.info;
-    detailedInfoContainer.appendChild(imageOfScientist);
+        "Backstory:" + " " + selectedScientist.info;
     detailedInfoContainer.appendChild(selectedScientistCard);
-    selectedScientistCard.appendChild(selectedScientistName);
-    selectedScientistName.appendChild(selectedScientistCardList);
-    selectedScientistCardList.appendChild(selectedScientistAge);
-    selectedScientistCardList.appendChild(selectedScientistHenchmen);
-    selectedScientistCardList.appendChild(selectedScientistInfo);
+    selectedScientistCard.appendChild(nameCard);
+    nameCard.appendChild(selectedScientistName);
+    selectedScientistCard.appendChild(ageCard);
+    ageCard.appendChild(selectedScientistAge);
+    selectedScientistCard.appendChild(henchmenCard);
+    henchmenCard.appendChild(selectedScientistHenchmen);
+    selectedScientistCard.appendChild(infoCard);
+    infoCard.appendChild(selectedScientistInfo);
 }
 console.log(Scientists);
 const submitButton = document.querySelector("#addbutton");

@@ -6,7 +6,6 @@ body {
     color: aliceblue;
     font-size: xx-large;
     text-align: center;
-    position: sticky;
 }
 
 .container {
@@ -115,7 +114,46 @@ body {
 #selected-scientist-card {
     align-items: center;
     text-align: center;
+    border: 1px;
 }
-#name-tag {
-    font-size: xx-large;
+
+.name {
+    display: flexbox;
+    flex-direction: column;
+    background-color: rgb(103, 114, 232);
+    border-radius: 11px;
+    height: 10%;
+    margin: 10px;
+    font-size: 50px;
+    border: solid black 2px;
+}
+.age {
+    display: flexbox;
+    flex-direction: column;
+    background-color: rgb(103, 114, 232);
+    border-radius: 11px;
+    height: 10%;
+    margin: 10px;
+    font-size: 20px;
+    border: solid black 2px;
+}
+.henchmen {
+    display: flexbox;
+    flex-direction: column;
+    background-color: rgb(103, 114, 232);
+    border-radius: 11px;
+    height: 10%;
+    margin: 10px;
+    font-size: 20px;
+    border: solid black 2px;
+}
+.infocard {
+    background-color: rgb(103, 114, 232);
+    border-radius: 11px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    border: solid black 2px;
+    height: 25rem;
+    overflow-y: scroll;
 }
