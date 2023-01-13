@@ -58,7 +58,7 @@ function printSelectedScientist(index: number) {
     //Spara selected scientist i en variabel
     const selectedScientist = Scientists[index];
     const imageOfScientist = document.createElement("img") as HTMLImageElement;
-    imageOfScientist.src = "images/evilscientist.png";
+    imageOfScientist.src = "evilscientist.png";
     let detailedInfoContainer = document.querySelector(
         "#detailed-info"
     ) as HTMLDivElement;
