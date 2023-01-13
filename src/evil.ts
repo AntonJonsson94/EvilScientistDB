@@ -71,6 +71,7 @@ function printSelectedScientist(index: number) {
     const selectedScientistName = document.createElement(
         "p"
     ) as HTMLParagraphElement;
+    selectedScientistName.setAttribute("id", "name-tag");
     selectedScientistName.innerHTML = selectedScientist.name;
     const selectedScientistCardList = document.createElement(
         "ul"
