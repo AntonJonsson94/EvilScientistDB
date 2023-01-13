@@ -21,6 +21,9 @@
     margin: 10px;
     font-size: 20px;
 }
+#column:hover {
+    background-color: yellow;
+}
 
 #form {
     display: flex;
