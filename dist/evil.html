@@ -8,35 +8,51 @@
         <title>Document</title>
     </head>
     <body>
+        <h3 class="title">Evil Scientist DB</h3>
         <div class="container">
             <div class="column">
-                !-Formuläret
-                <h4>Make your own!</h4>
+                <h4>Make your own evil scientist!</h4>
                 <form id="form">
                     <label for="Name">Name</label>
-                    <input type="text" id="name" name="name" class="inputbox" />
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="inputbox"
+                        required
+                    />
                     <label for="Age">Age</label>
-                    <input type="number" id="age" name="age" class="inputbox" />
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        class="inputbox"
+                        required
+                    />
                     <label for="henchmen">Amount of henchmen</label>
                     <input
                         type="number"
                         id="henchmen"
                         name="henchmen"
                         class="inputbox"
+                        required
                     />
                     <label for="info">Backstory</label>
-                    <input type="text" id="info" name="info" class="infobox" />
+                    <input
+                        type="text"
+                        id="info"
+                        name="info"
+                        class="infobox"
+                        required
+                    />
                     <button class="addbutton" id="addbutton">
                         Add scientist
                     </button>
                 </form>
             </div>
-            <div class="scroll" id="scientist-cards">
-                <h4>Evil Scientists</h4>
-                !-Lista varje scientist här
-            </div>
+            <div class="scroll" id="scientist-cards">Evil</div>
             <div class="column" id="detailed-info">
-                !--Visa detaljerad info här
+                <img src="images/evilscientist.png" alt="" />
             </div>
         </div>
         <script src="evil.js"></script>

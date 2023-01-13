@@ -1,12 +1,4 @@
 "use strict";
-const images = [
-    "dist/evilscientist.png",
-    "dist/evilscientist.png",
-    "dist/evilscientist.png",
-    "dist/evilscientist.png",
-    "dist/evilscientist.png",
-];
-const sounds = [];
 const Scientists = [
     { name: "Hjalmar", age: 50, henchmen: 5000, info: "Stuff" },
     { name: "Balder", age: 80, henchmen: 50000, info: "Stuffs" },
@@ -50,10 +42,10 @@ function printSelectedScientist(index) {
     const selectedScientistCardList = document.createElement("ul");
     const selectedScientistAge = document.createElement("p");
     selectedScientistAge.innerHTML =
-        "Age" + "\n " + selectedScientist.age.toString();
+        "Age" + " " + selectedScientist.age.toString();
     const selectedScientistHenchmen = document.createElement("p");
     selectedScientistHenchmen.innerHTML =
-        "\nAmount of henchmen" + " " + selectedScientist.henchmen.toString();
+        "Amount of henchmen" + " " + selectedScientist.henchmen.toString();
     const selectedScientistInfo = document.createElement("p");
     selectedScientistInfo.innerHTML =
         "Backstory" + " " + selectedScientist.info;
@@ -73,7 +65,10 @@ const newScientistHenchmen = document.querySelector("#henchmen");
 const newScientistInfo = document.querySelector("#info");
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
-    if (newScientistName.value === "") {
+    if (newScientistName.value === "" ||
+        newScientistAge.value === "" ||
+        newScientistHenchmen.value === "" ||
+        newScientistInfo.value === "") {
         alert("Var god och fyll i all information!");
     }
     else {

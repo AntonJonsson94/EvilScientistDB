@@ -5,16 +5,6 @@ type evilScientist = {
     info: string;
 };
 
-const images = [
-    "dist/evilscientist.png",
-    "dist/evilscientist.png",
-    "dist/evilscientist.png",
-    "dist/evilscientist.png",
-    "dist/evilscientist.png",
-];
-
-const sounds: string[] = [];
-
 const Scientists: evilScientist[] = [
     { name: "Hjalmar", age: 50, henchmen: 5000, info: "Stuff" },
     { name: "Balder", age: 80, henchmen: 50000, info: "Stuffs" },
@@ -73,6 +63,7 @@ function printSelectedScientist(index: number) {
     ) as HTMLParagraphElement;
     selectedScientistName.setAttribute("id", "name-tag");
     selectedScientistName.innerHTML = selectedScientist.name;
+
     const selectedScientistCardList = document.createElement(
         "ul"
     ) as HTMLUListElement;
@@ -80,12 +71,12 @@ function printSelectedScientist(index: number) {
         "p"
     ) as HTMLParagraphElement;
     selectedScientistAge.innerHTML =
-        "Age" + "\n " + selectedScientist.age.toString();
+        "Age" + " " + selectedScientist.age.toString();
     const selectedScientistHenchmen = document.createElement(
         "p"
     ) as HTMLParagraphElement;
     selectedScientistHenchmen.innerHTML =
-        "\nAmount of henchmen" + " " + selectedScientist.henchmen.toString();
+        "Amount of henchmen" + " " + selectedScientist.henchmen.toString();
     const selectedScientistInfo = document.createElement(
         "p"
     ) as HTMLParagraphElement;
@@ -99,26 +90,6 @@ function printSelectedScientist(index: number) {
     selectedScientistCardList.appendChild(selectedScientistAge);
     selectedScientistCardList.appendChild(selectedScientistHenchmen);
     selectedScientistCardList.appendChild(selectedScientistInfo);
-
-    //hej
-
-    // let detailedCardContainer = document.querySelector(
-    //     "#detailed-info"
-    // ) as HTMLDivElement;
-    // detailedCardContainer.innerHTML = "";
-    // for (let i = 0; i < Scientists.length; i++)
-    //     const selectedScientistCard = document.createElement(
-    //         "div"
-    //     ) as HTMLDivElement;
-    // selectedScientistCard.setAttribute("id", "selected-card");
-    // const selectedScientistName = document.createElement("h3");
-    // selectedScientistName.innerHTML = Scientists[index].name;
-    // selectedCardList = document.createElement("ul");
-    // selectedScientistAgeList = document.createElement("li");
-    // selectedScientistHenchmenList = document.createElement("li");
-    // selectedScientistInfoList = document.createElement("li");
-    // detailedCardContainer.appendChild(selec);
-    //
 }
 console.log(Scientists);
 
@@ -132,7 +103,12 @@ const newScientistInfo = document.querySelector("#info") as HTMLInputElement;
 
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
-    if (newScientistName.value === "") {
+    if (
+        newScientistName.value === "" ||
+        newScientistAge.value === "" ||
+        newScientistHenchmen.value === "" ||
+        newScientistInfo.value === ""
+    ) {
         alert("Var god och fyll i all information!");
     } else {
         const newScientist: evilScientist = {
