@@ -1,4 +1,11 @@
 "use strict";
+const images = [
+    "dist/evilscientist.png",
+    "dist/evilscientist.png",
+    "dist/evilscientist.png",
+    "dist/evilscientist.png",
+    "dist/evilscientist.png",
+];
 const sounds = [];
 const Scientists = [
     { name: "Hjalmar", age: 50, henchmen: 5000, info: "Stuff" },
@@ -19,22 +26,20 @@ function printScientists() {
         newScientistCard.setAttribute("id", "column");
         const cardlist = document.createElement("ul");
         const nameList = document.createElement("div");
-        const cardButton = document.createElement("button");
-        cardButton.innerHTML = "More details";
         nameList.innerHTML = Scientists[i].name;
         cardContainer.appendChild(newScientistCard);
         newScientistCard.appendChild(cardlist);
         cardlist.appendChild(nameList);
-        nameList.appendChild(cardButton);
-        cardButton.addEventListener("click", () => {
+        newScientistCard.addEventListener("click", () => {
             printSelectedScientist(i);
         });
     }
 }
 printScientists();
 function printSelectedScientist(index) {
-    console.log("Clicked on index:" + index);
     const selectedScientist = Scientists[index];
+    const imageOfScientist = document.createElement("img");
+    imageOfScientist.src = "images/evilscientist.png";
     let detailedInfoContainer = document.querySelector("#detailed-info");
     detailedInfoContainer.innerHTML = "";
     const selectedScientistCard = document.createElement("div");
@@ -44,13 +49,14 @@ function printSelectedScientist(index) {
     const selectedScientistCardList = document.createElement("ul");
     const selectedScientistAge = document.createElement("div");
     selectedScientistAge.innerHTML =
-        "Age" + " " + selectedScientist.age.toString();
-    const selectedScientistHenchmen = document.createElement("li");
+        "Age" + "\n " + selectedScientist.age.toString();
+    const selectedScientistHenchmen = document.createElement("div");
     selectedScientistHenchmen.innerHTML =
-        "Amount of henchmen" + " " + selectedScientist.henchmen.toString();
-    const selectedScientistInfo = document.createElement("li");
+        "\nAmount of henchmen" + " " + selectedScientist.henchmen.toString();
+    const selectedScientistInfo = document.createElement("div");
     selectedScientistInfo.innerHTML =
         "Backstory" + " " + selectedScientist.info;
+    detailedInfoContainer.appendChild(imageOfScientist);
     detailedInfoContainer.appendChild(selectedScientistCard);
     selectedScientistCard.appendChild(selectedScientistName);
     selectedScientistName.appendChild(selectedScientistCardList);
@@ -66,13 +72,19 @@ const newScientistHenchmen = document.querySelector("#henchmen");
 const newScientistInfo = document.querySelector("#info");
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
-    const newScientist = {
-        name: newScientistName.value,
-        age: parseInt(newScientistAge.value),
-        henchmen: parseInt(newScientistHenchmen.value),
-        info: newScientistInfo.value,
-    };
-    Scientists.push(newScientist);
-    console.log(Scientists);
-    printScientists();
+    if (newScientistName.value === "") {
+        alert("Var god och fyll i all information!");
+    }
+    else {
+        const newScientist = {
+            name: newScientistName.value,
+            age: parseInt(newScientistAge.value),
+            henchmen: parseInt(newScientistHenchmen.value),
+            info: newScientistInfo.value,
+        };
+        Scientists.push(newScientist);
+        console.log(newScientistAge.value);
+        console.log(Scientists);
+        printScientists();
+    }
 });

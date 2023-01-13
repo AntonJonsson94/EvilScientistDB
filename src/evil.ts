@@ -5,6 +5,14 @@ type evilScientist = {
     info: string;
 };
 
+const images = [
+    "dist/evilscientist.png",
+    "dist/evilscientist.png",
+    "dist/evilscientist.png",
+    "dist/evilscientist.png",
+    "dist/evilscientist.png",
+];
+
 const sounds: string[] = [];
 
 const Scientists: evilScientist[] = [
@@ -32,15 +40,13 @@ function printScientists() {
         newScientistCard.setAttribute("id", "column");
         const cardlist = document.createElement("ul");
         const nameList = document.createElement("div");
-        const cardButton = document.createElement("button");
-        cardButton.innerHTML = "More details";
+
         nameList.innerHTML = Scientists[i].name;
         cardContainer.appendChild(newScientistCard);
         newScientistCard.appendChild(cardlist);
         cardlist.appendChild(nameList);
-        nameList.appendChild(cardButton);
 
-        cardButton.addEventListener("click", () => {
+        newScientistCard.addEventListener("click", () => {
             printSelectedScientist(i);
         });
     }
@@ -48,37 +54,42 @@ function printScientists() {
 
 printScientists();
 function printSelectedScientist(index: number) {
-    console.log("Clicked on index:" + index);
+    // console.log("Clicked on index:" + index);
     //Spara selected scientist i en variabel
     const selectedScientist = Scientists[index];
-
+    const imageOfScientist = document.createElement("img") as HTMLImageElement;
+    imageOfScientist.src = "images/evilscientist.png";
     let detailedInfoContainer = document.querySelector(
         "#detailed-info"
     ) as HTMLDivElement;
     detailedInfoContainer.innerHTML = "";
+    const selectedScientistCard = document.createElement(
+        "div"
+    ) as HTMLDivElement;
 
-    const selectedScientistCard = document.createElement("div") as HTMLElement;
     selectedScientistCard.setAttribute("id", "selected-scientist-card");
     const selectedScientistName = document.createElement("h4");
     selectedScientistName.innerHTML = selectedScientist.name;
     const selectedScientistCardList = document.createElement(
         "ul"
     ) as HTMLUListElement;
-
     const selectedScientistAge = document.createElement(
         "div"
     ) as HTMLDivElement;
     selectedScientistAge.innerHTML =
-        "Age" + " " + selectedScientist.age.toString();
+        "Age" + "\n " + selectedScientist.age.toString();
     const selectedScientistHenchmen = document.createElement(
-        "li"
-    ) as HTMLLIElement;
+        "div"
+    ) as HTMLDivElement;
     selectedScientistHenchmen.innerHTML =
-        "Amount of henchmen" + " " + selectedScientist.henchmen.toString();
-    const selectedScientistInfo = document.createElement("li") as HTMLLIElement;
+        "\nAmount of henchmen" + " " + selectedScientist.henchmen.toString();
+    const selectedScientistInfo = document.createElement(
+        "div"
+    ) as HTMLDivElement;
     selectedScientistInfo.innerHTML =
         "Backstory" + " " + selectedScientist.info;
 
+    detailedInfoContainer.appendChild(imageOfScientist);
     detailedInfoContainer.appendChild(selectedScientistCard);
     selectedScientistCard.appendChild(selectedScientistName);
     selectedScientistName.appendChild(selectedScientistCardList);
@@ -118,13 +129,18 @@ const newScientistInfo = document.querySelector("#info") as HTMLInputElement;
 
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
-    const newScientist: evilScientist = {
-        name: newScientistName.value,
-        age: parseInt(newScientistAge.value),
-        henchmen: parseInt(newScientistHenchmen.value),
-        info: newScientistInfo.value,
-    };
-    Scientists.push(newScientist);
-    console.log(Scientists);
-    printScientists();
+    if (newScientistName.value === "") {
+        alert("Var god och fyll i all information!");
+    } else {
+        const newScientist: evilScientist = {
+            name: newScientistName.value,
+            age: parseInt(newScientistAge.value),
+            henchmen: parseInt(newScientistHenchmen.value),
+            info: newScientistInfo.value,
+        };
+        Scientists.push(newScientist);
+        console.log(newScientistAge.value);
+        console.log(Scientists);
+        printScientists();
+    }
 });
