@@ -44,16 +44,16 @@ function printSelectedScientist(index) {
     detailedInfoContainer.innerHTML = "";
     const selectedScientistCard = document.createElement("div");
     selectedScientistCard.setAttribute("id", "selected-scientist-card");
-    const selectedScientistName = document.createElement("h4");
+    const selectedScientistName = document.createElement("p");
     selectedScientistName.innerHTML = selectedScientist.name;
     const selectedScientistCardList = document.createElement("ul");
-    const selectedScientistAge = document.createElement("div");
+    const selectedScientistAge = document.createElement("p");
     selectedScientistAge.innerHTML =
         "Age" + "\n " + selectedScientist.age.toString();
-    const selectedScientistHenchmen = document.createElement("div");
+    const selectedScientistHenchmen = document.createElement("p");
     selectedScientistHenchmen.innerHTML =
         "\nAmount of henchmen" + " " + selectedScientist.henchmen.toString();
-    const selectedScientistInfo = document.createElement("div");
+    const selectedScientistInfo = document.createElement("p");
     selectedScientistInfo.innerHTML =
         "Backstory" + " " + selectedScientist.info;
     detailedInfoContainer.appendChild(imageOfScientist);

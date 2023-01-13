@@ -68,24 +68,26 @@ function printSelectedScientist(index: number) {
     ) as HTMLDivElement;
 
     selectedScientistCard.setAttribute("id", "selected-scientist-card");
-    const selectedScientistName = document.createElement("h4");
+    const selectedScientistName = document.createElement(
+        "p"
+    ) as HTMLParagraphElement;
     selectedScientistName.innerHTML = selectedScientist.name;
     const selectedScientistCardList = document.createElement(
         "ul"
     ) as HTMLUListElement;
     const selectedScientistAge = document.createElement(
-        "div"
-    ) as HTMLDivElement;
+        "p"
+    ) as HTMLParagraphElement;
     selectedScientistAge.innerHTML =
         "Age" + "\n " + selectedScientist.age.toString();
     const selectedScientistHenchmen = document.createElement(
-        "div"
-    ) as HTMLDivElement;
+        "p"
+    ) as HTMLParagraphElement;
     selectedScientistHenchmen.innerHTML =
         "\nAmount of henchmen" + " " + selectedScientist.henchmen.toString();
     const selectedScientistInfo = document.createElement(
-        "div"
-    ) as HTMLDivElement;
+        "p"
+    ) as HTMLParagraphElement;
     selectedScientistInfo.innerHTML =
         "Backstory" + " " + selectedScientist.info;
 
